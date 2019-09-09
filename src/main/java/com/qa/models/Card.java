@@ -14,6 +14,7 @@ public class Card {
     Long id;
     String name;
     String clan;
+    String decktype;
 
     public Long getId() {
         return id;
@@ -37,6 +38,14 @@ public class Card {
 
     public void setClan(String clan) {
         this.clan = clan;
+    }
+
+    public String getDeckType() {
+        return decktype;
+    }
+
+    public void setDeckType(String deckType) {
+        this.decktype = deckType;
     }
 
 
