@@ -5,6 +5,7 @@ import com.qa.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.qa.models.Card;
+
 import java.util.List;
 
 @CrossOrigin
@@ -25,10 +26,16 @@ public class CardController {
     }
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
-    public  Card deleteNote(@PathVariable Long id){
+    public Card deleteNote(@PathVariable Long id){
         Card existing = repository.findOne(id);
         repository.delete(existing);
         return existing;
+    }
+
+    @RequestMapping(value = "cards/{id}",method = RequestMethod.PUT)
+    public Card updateNote(@PathVariable Long id){
+        Card existing = repository.findOne(id);
+        return repository.saveAndFlush(existing);
     }
 
 
