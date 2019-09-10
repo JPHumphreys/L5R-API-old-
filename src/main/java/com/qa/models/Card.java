@@ -3,7 +3,7 @@ package com.qa.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Cards")
+@Table(name = "cards")
 public class Card {
 
     @Id
