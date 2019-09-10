@@ -37,7 +37,13 @@ public class CardControllerTest {
 
     @Test
     public void testAddCard(){
+        Card card = new Card();
+        card.setClan("Crab");
+        card.setDeckType("Stronghold");
+        card.setName("Shiro Nishiyama");
 
+        when(repository.saveAndFlush(card)).thenReturn(card);
+        cardController.addCard(card);
     }
 
     @Test//getOne
