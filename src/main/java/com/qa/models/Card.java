@@ -11,10 +11,10 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String name;
-    String clan;
-    String decktype;
+    private Long id;
+    private String name;
+    private String clan;
+    private String decktype;
 
     public Long getId() {
         return id;
