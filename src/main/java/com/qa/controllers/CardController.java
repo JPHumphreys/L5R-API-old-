@@ -31,14 +31,14 @@ public class CardController {
     }
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
-    public Card deleteNote(@PathVariable Long id){
+    public Card deleteCard(@PathVariable Long id){
         Card existing = repository.findOne(id);
         repository.delete(existing);
         return existing;
     }
 
     @RequestMapping(value = "cards/{id}",method = RequestMethod.PUT)
-    public Card updateNote(@PathVariable Long id){
+    public Card updateCard(@PathVariable Long id){
         Card existing = repository.findOne(id);
         return repository.saveAndFlush(existing);
     }

@@ -47,6 +47,28 @@ public class CardControllerTest {
     }
 
     @Test//getOne
+    public void testDeleteCard(){
+        Card card = new Card();
+        card.setName("Shiro Nishiyama");
+        card.setClan("Crab");
+        card.setDeckType("Stronghold");
+
+        when(repository.findOne(1l)).thenReturn(card);
+        cardController.deleteCard(1l);
+    }
+
+    @Test
+    public void testUpdateCard(){
+        Card card = new Card();
+        card.setName("Shiro Nishiyama");
+        card.setClan("Crab");
+        card.setDeckType("Stronghold");
+
+        when(repository.findOne(1l)).thenReturn(card);
+        cardController.updateCard(1l);
+    }
+
+    @Test//getOne
     public void testGetCard(){
         Card card = new Card();
         card.setName("Shiro Nishiyama");
