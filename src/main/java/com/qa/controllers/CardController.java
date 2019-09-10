@@ -24,6 +24,13 @@ public class CardController {
         return repository.saveAndFlush(card);
     }
 
+    @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
+    public  Card deleteNote(@PathVariable Long id){
+        Card existing = repository.findOne(id);
+        repository.delete(existing);
+        return existing;
+    }
+
 
 
 }
