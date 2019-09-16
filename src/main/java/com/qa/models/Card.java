@@ -219,4 +219,12 @@ public class Card<String> {
         this.unicity = unicity;
     }
 
+    public String getClan() {
+        return clan;
+    }
+
+    public void setClan(String clan) {
+        this.clan = clan;
+    }
+
 }
