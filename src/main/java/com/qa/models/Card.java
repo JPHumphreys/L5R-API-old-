@@ -9,25 +9,25 @@ public class Card {
     @Id
 
     String clan;
-    int cost;
-    int decklimit;
+    int cost = 0;
+    int decklimit = 3;
     String element;
-    int fate;
-    int glory;
-    int honor;
+    int fate = 0;
+    int glory = 0;
+    int honor = 0;
     String id;
     String imglocation;
-    int influencecost;
-    int influencepool;
+    int influencecost = 0;
+    int influencepool = 0;
     String isrestricted;
-    int military;
+    int military = 0;
     String militarybonus;
     String name;
-    int political;
+    int political = 0;
     String politicalbonus;
     String rolerestriction;
     String side;
-    int strength;
+    int strength = 0;
     String strengthbonus;
     String text;
     String typeof;
