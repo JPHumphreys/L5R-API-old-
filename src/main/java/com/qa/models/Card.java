@@ -4,13 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "cards")
-public class Card<String> {
+public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     //String clan;
-    int cost;
+            int cost;
     int decklimit;
     String element;
     int fate;
@@ -33,6 +33,7 @@ public class Card<String> {
     String text;
     String typeof;
     String unicity;
+}
 
 
 

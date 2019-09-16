@@ -3,5 +3,5 @@ package com.qa.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.qa.models.Card;
 
-public interface CardRepository extends JpaRepository<Card, String>{
+public interface CardRepository extends JpaRepository<Card, Long>{
 }
