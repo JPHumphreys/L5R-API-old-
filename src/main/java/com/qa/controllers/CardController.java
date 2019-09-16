@@ -26,19 +26,19 @@ public class CardController {
     }
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.GET)
-    public Card getCard(@PathVariable Long id){
+    public Card getCard(@PathVariable String id){
         return repository.findOne(id);
     }
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
-    public Card deleteCard(@PathVariable Long id){
+    public Card deleteCard(@PathVariable String id){
         Card existing = repository.findOne(id);
         repository.delete(existing);
         return existing;
     }
 
     @RequestMapping(value = "cards/{id}",method = RequestMethod.PUT)
-    public Card updateCard(@PathVariable Long id){
+    public Card updateCard(@PathVariable String id){
         Card existing = repository.findOne(id);
         return repository.saveAndFlush(existing);
     }
