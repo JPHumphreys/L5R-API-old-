@@ -1,5 +1,7 @@
 package com.qa.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -89,6 +91,7 @@ public class Card {
         this.honor = honor;
     }
 
+    @JsonProperty("id")
     public String getId() {
         return id;
     }
