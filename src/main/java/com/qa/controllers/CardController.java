@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.qa.models.Card;
 
+import javax.persistence.ElementCollection;
+import javax.persistence.FetchType;
 import java.util.List;
 
 @CrossOrigin
@@ -13,10 +15,12 @@ import java.util.List;
 public class CardController {
 
     @Autowired
+    @ElementCollection(fetch= FetchType.LAZY)
     private CardRepository repository;
 
     @RequestMapping(value = "cards", method = RequestMethod.GET)
     public List<Card> listAllCards(){
+
         return repository.findAll();
     }
 

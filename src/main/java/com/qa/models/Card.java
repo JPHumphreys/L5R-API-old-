@@ -12,9 +12,6 @@ public class Card {
 
     @Id
 
-    @OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.LAZY)
-    private List<Card> cards = new ArrayList<>();
-
     String clan;
     int cost;
     int decklimit;
