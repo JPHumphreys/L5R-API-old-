@@ -3,12 +3,17 @@ package com.qa.models;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "cards")
 public class Card {
 
     @Id
+
+    @OneToMany(cascade=CascadeType.PERSIST, fetch=FetchType.LAZY)
+    private List<Card> cards = new ArrayList<>();
 
     String clan;
     int cost;
