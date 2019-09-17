@@ -11,6 +11,7 @@ import java.util.List;
 public class Card {
 
     @Id
+    String id;
 
     String clan;
     int cost;
@@ -19,7 +20,6 @@ public class Card {
     int fate;
     int glory;
     int honor;
-    String id;
     String imglocation;
     int influencecost;
     int influencepool;
@@ -93,7 +93,6 @@ public class Card {
         this.honor = honor;
     }
 
-    @JsonProperty("id")
     public String getId() {
         return id;
     }

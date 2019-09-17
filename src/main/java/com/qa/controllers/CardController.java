@@ -20,7 +20,6 @@ public class CardController {
 
     @RequestMapping(value = "cards", method = RequestMethod.GET)
     public List<Card> listAllCards(){
-
         return repository.findAll();
     }
 
