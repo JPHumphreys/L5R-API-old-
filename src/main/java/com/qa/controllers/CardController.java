@@ -8,6 +8,7 @@ import com.qa.models.Card;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.FetchType;
+import java.util.Collections;
 import java.util.List;
 
 @CrossOrigin
@@ -23,15 +24,24 @@ public class CardController {
         return repository.findAll();
     }
 
-    @RequestMapping(value = "cards", method = RequestMethod.POST)
-    public Card addCard(@RequestBody Card card){
-        return repository.saveAndFlush(card);
-    }
+    //@RequestMapping(value = "cards", method = RequestMethod.POST)
+    //public Card addCard(@RequestBody Card card){
+        //return repository.saveAndFlush(card);
+    //}
+
+    //GETTERS
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.GET)
     public Card getCard(@PathVariable String id){
         return repository.findOne(id);
     }
+
+    @RequestMapping(value = "cards/{clan}", method = RequestMethod.GET)
+    public List<Card> getCardByClan(@PathVariable String clan){
+        return repository.findAll(Collections.singleton(clan));
+    }
+
+
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
     public Card deleteCard(@PathVariable String id){
