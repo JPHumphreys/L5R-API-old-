@@ -36,7 +36,7 @@ public class CardController {
         return repository.findOne(id);
     }
 
-    @RequestMapping(value = "cards/{clan}", method = RequestMethod.GET)
+    @RequestMapping(value = "cards/clans/{clan}", method = RequestMethod.GET)
     public List<Card> getCardByClan(@PathVariable String clan){
         return repository.findAll(Collections.singleton(clan));
     }
