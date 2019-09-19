@@ -5,6 +5,6 @@ import com.qa.models.Card;
 
 public interface CardRepository extends JpaRepository<Card, String>{
 
-    public List<Card> findAllByClan(String clan);
+    List<Card> findAllByClan(String clan);
 
 }
