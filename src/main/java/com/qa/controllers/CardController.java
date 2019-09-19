@@ -34,8 +34,8 @@ public class CardController {
         return repository.findAllByClan(clan);
     }
 
-    @RequestMapping(value = "cards/{type}/{clan}", method = RequestMethod.GET)
-    public List<Card> getCardByClanAndSide(@PathVariable String side,String clan){
+    @RequestMapping(value = "cards/{clan}/{side}", method = RequestMethod.GET)
+    public List<Card> getCardByClanAndSide(@PathVariable String clan,String side){
         return repository.findAllByClanAndSide(clan,side);
     }
 
