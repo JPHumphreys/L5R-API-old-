@@ -34,6 +34,11 @@ public class CardController {
         return repository.findAllByClan(clan);
     }
 
+    @RequestMapping(value = "cards/{type}/{clan}", method = RequestMethod.GET)
+    public List<Card> getCardByClanAndSide(@PathVariable String side,String clan){
+        return repository.findAllByClanAndSide(clan,side);
+    }
+
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
     public Card deleteCard(@PathVariable String id){
         Card existing = repository.findOne(id);

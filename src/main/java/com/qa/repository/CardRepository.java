@@ -8,4 +8,6 @@ public interface CardRepository extends JpaRepository<Card, String>{
 
     List<Card> findAllByClan(String clan);
 
+    List<Card> findAllByClanAndSide(String clan, String side);
+
 }
