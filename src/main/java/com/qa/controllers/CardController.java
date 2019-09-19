@@ -38,10 +38,8 @@ public class CardController {
 
     @RequestMapping(value = "cards/clans/{clan}", method = RequestMethod.GET)
     public List<Card> getCardByClan(@PathVariable String clan){
-        return repository.findAll(Collections.singleton(clan));
+        return repository.findAllByClan(clan);
     }
-
-
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
     public Card deleteCard(@PathVariable String id){
