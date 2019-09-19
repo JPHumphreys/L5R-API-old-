@@ -8,7 +8,6 @@ import com.qa.models.Card;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.FetchType;
-import java.util.Collections;
 import java.util.List;
 
 @CrossOrigin
@@ -19,21 +18,24 @@ public class CardController {
     @ElementCollection(fetch= FetchType.LAZY)
     private CardRepository repository;
 
+    //get all cards
     @RequestMapping(value = "cards", method = RequestMethod.GET)
     public List<Card> listAllCards(){
         return repository.findAll();
     }
 
+    //get single by id
     @RequestMapping(value = "cards/{id}", method = RequestMethod.GET)
     public Card getCard(@PathVariable String id){
         return repository.findOne(id);
     }
 
+    //get by just clan
     @RequestMapping(value = "cards/clans/{clan}", method = RequestMethod.GET)
     public List<Card> getCardByClan(@PathVariable String clan){
         return repository.findAllByClan(clan);
     }
-
+    //get by clan and side to narrow down for rating votes
     @RequestMapping(value = "cards/{clan}/{side}", method = RequestMethod.GET)
     public List<Card> getCardByClanAndSide(@PathVariable String clan,@PathVariable String side){
         return repository.findAllByClanAndSide(clan,side);
