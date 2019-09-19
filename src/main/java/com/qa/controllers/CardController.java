@@ -24,13 +24,6 @@ public class CardController {
         return repository.findAll();
     }
 
-    //@RequestMapping(value = "cards", method = RequestMethod.POST)
-    //public Card addCard(@RequestBody Card card){
-        //return repository.saveAndFlush(card);
-    //}
-
-    //GETTERS
-
     @RequestMapping(value = "cards/{id}", method = RequestMethod.GET)
     public Card getCard(@PathVariable String id){
         return repository.findOne(id);
