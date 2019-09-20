@@ -65,6 +65,9 @@ public class RatingController {
             card.setRatingcrab((card.getRatingcrab() - (rating.getRatingcrab()/card.getTotalvotescrab())));
             //card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) - rating.getRatingcrab())/(card.getTotalvotescrab() - 1));
             card.setTotalvotescrab(card.getTotalvotescrab() - 1);
+            System.out.println("currentrating: " + card.getRatingcrab());
+            System.out.println("ratingIn : " + rating.getRatingcrab());
+            System.out.println("current total : " + card.getTotalvotescrab());
         }
 
         repository.saveAndFlush(card);
