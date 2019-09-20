@@ -31,7 +31,7 @@ public class RatingController {
         float tmpRating = rating.getRatingcrab();
         //card.setRatingcrab(rating.getRatingcrab());
 
-        if(rating.getTotalvotescrab() == 0 || rating.getRatingcrab() == 0){
+        if(card.getTotalvotescrab() == 0 || card.getRatingcrab() == 0){
             card.setRatingcrab(rating.getRatingcrab());
         }
         else{
