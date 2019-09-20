@@ -211,7 +211,7 @@ public class RatingController {
             obj.getRatingscorpion() +
             obj.getRatingunicorn();
 
-    if(totalVotes == 0){
+    if(totalVotes <= 0){
         toReturn = 0;
     }
     else{
