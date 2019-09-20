@@ -24,8 +24,8 @@ public class RatingController {
         return repository.findOne(id);
     }
 
-    @RequestMapping(value = "ratings/crab/{id}",method = RequestMethod.PUT)
-    public Rating updateRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
+    @RequestMapping(value = "add/ratings/crab/{id}",method = RequestMethod.PUT)
+    public Rating addRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
         Rating card = repository.findOne(id);
 
         System.out.println("beep boop");
@@ -43,6 +43,24 @@ public class RatingController {
         }
 
         card.setTotalvotescrab(card.getTotalvotescrab() + 1);
+        repository.saveAndFlush(card);
+        return card;
+    }
+
+    @RequestMapping(value = "remove/ratings/crab/{id}",method = RequestMethod.PUT)
+    public Rating removeRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
+        Rating card = repository.findOne(id);
+
+        System.out.println("beep boop");
+
+        if(card.getTotalvotescrab() == 0){
+
+        }
+        else{
+            card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) - rating.getRatingcrab())/(card.getTotalvotescrab() + 1));
+            card.setTotalvotescrab(card.getTotalvotescrab() - 1);
+        }
+
         repository.saveAndFlush(card);
         return card;
     }
