@@ -33,6 +33,7 @@ public class RatingController {
 
         if(card.getTotalvotescrab() == 0 || card.getRatingcrab() == 0){
             card.setRatingcrab(rating.getRatingcrab());
+            System.out.println("beep boop");
         }
         else{
             card.setRatingcrab(((rating.getTotalvotescrab() * card.getRatingcrab()) +tmpRating)/(rating.getTotalvotescrab() + 1));
