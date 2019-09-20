@@ -58,7 +58,7 @@ public class RatingController {
             card.setTotalvotescrab(0);
         }
         else{
-            card.setRatingcrab((card.getRatingcrab() - (rating.getRatingcrab()/card.getTotalvotescrab())));
+            card.setRatingcrab((card.getRatingcrab() - (rating.getRatingcrab()/card.getTotalvotescrab() - 1)));
             //card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) - rating.getRatingcrab())/(card.getTotalvotescrab() - 1));
             card.setTotalvotescrab(card.getTotalvotescrab() - 1);
             System.out.println("currentrating: " + card.getRatingcrab());
