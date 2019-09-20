@@ -193,6 +193,8 @@ public class RatingController {
 
     public float returnNewOverallRating(Rating obj){
 
+    float toReturn;
+
     int totalVotes = obj.getTotalvotescrab() +
             obj.getTotalvotescrane() +
             obj.getTotalvotesdragon() +
@@ -209,7 +211,14 @@ public class RatingController {
             obj.getRatingscorpion() +
             obj.getRatingunicorn();
 
-    return (totalRatings / totalVotes);
+    if(totalVotes == 0){
+        toReturn = 0;
+    }
+    else{
+        toReturn = totalRatings / totalVotes;
+    }
+
+    return (toReturn);
 
     }
 
