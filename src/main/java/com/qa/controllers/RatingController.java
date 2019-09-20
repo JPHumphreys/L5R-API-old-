@@ -29,9 +29,8 @@ public class RatingController {
         Rating card = repository.findOne(id);
         float tmpRating;
         tmpRating = card.getRatingcrab();
-        // newrating = ((currentvotes * currentrating) + newvote)/currentvotes + 1
-        card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) +tmpRating)/card.getTotalvotescrab() + 1);
-        card.setTotalvotescrab(card.getTotalvotescrab() + 1);
+        //card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) +tmpRating)/card.getTotalvotescrab() + 1);
+        //card.setTotalvotescrab(card.getTotalvotescrab() + 1);
         repository.saveAndFlush(card);
         return card;
     }
