@@ -30,18 +30,15 @@ public class RatingController {
 
         System.out.println("beep boop");
 
-        float tmpRating = rating.getRatingcrab();
-        //card.setRatingcrab(rating.getRatingcrab());
-
         if(card.getTotalvotescrab() == 0 || card.getRatingcrab() == 0){
             card.setRatingcrab(rating.getRatingcrab());
             System.out.println("beep boop");
         }
         else{
-            card.setRatingcrab(((card.getTotalvotescrab() * rating.getRatingcrab()) +tmpRating)/(card.getTotalvotescrab() + 1));
-            System.out.println("card votes crab: " + rating.getTotalvotescrab());
+            card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) + rating.getRatingcrab())/(card.getTotalvotescrab() + 1));
+            System.out.println("card votes crab: " + card.getTotalvotescrab());
             System.out.println("rating rating crab : " + card.getRatingcrab());
-            System.out.println("tmp variable : " + tmpRating);
+            System.out.println("tmp variable : " + rating.getRatingcrab());
 
         }
 
