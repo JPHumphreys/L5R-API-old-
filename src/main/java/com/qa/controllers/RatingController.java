@@ -28,17 +28,11 @@ public class RatingController {
     public Rating addRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
         Rating card = repository.findOne(id);
 
-        System.out.println("beep boop");
-
         if(card.getTotalvotescrab() == 0 || card.getRatingcrab() == 0){
             card.setRatingcrab(rating.getRatingcrab());
-            System.out.println("beep boop");
         }
         else{
             card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) + rating.getRatingcrab())/(card.getTotalvotescrab() + 1));
-           // System.out.println("card votes crab: " + card.getTotalvotescrab());
-           // System.out.println("rating rating crab : " + card.getRatingcrab());
-           // System.out.println("tmp variable : " + rating.getRatingcrab());
 
         }
 
@@ -51,8 +45,6 @@ public class RatingController {
     public Rating removeRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
         Rating card = repository.findOne(id);
 
-        System.out.println("beep boop");
-
         if(card.getTotalvotescrab() <=1){
             card.setRatingcrab(0);
             card.setTotalvotescrab(0);
@@ -61,9 +53,6 @@ public class RatingController {
             //card.setRatingcrab((card.getRatingcrab() - (rating.getRatingcrab()/card.getTotalvotescrab() - 1)));
             card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) - rating.getRatingcrab())/(card.getTotalvotescrab() - 1));
             card.setTotalvotescrab(card.getTotalvotescrab() - 1);
-            System.out.println("currentrating: " + card.getRatingcrab());
-            System.out.println("ratingIn : " + rating.getRatingcrab());
-            System.out.println("current total : " + card.getTotalvotescrab());
         }
 
         repository.saveAndFlush(card);
