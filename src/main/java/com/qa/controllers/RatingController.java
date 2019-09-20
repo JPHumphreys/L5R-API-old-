@@ -31,7 +31,13 @@ public class RatingController {
         float tmpRating = rating.getRatingcrab();
         //card.setRatingcrab(rating.getRatingcrab());
 
-        card.setRatingcrab(((rating.getTotalvotescrab() * rating.getRatingcrab()) +tmpRating)/rating.getTotalvotescrab() + 1);
+        if(rating.getTotalvotescrab() == 0 || rating.getRatingcrab() == 0){
+            card.setRatingcrab(rating.getRatingcrab());
+        }
+        else{
+            card.setRatingcrab(((rating.getTotalvotescrab() * rating.getRatingcrab()) +tmpRating)/(rating.getTotalvotescrab() + 1));
+        }
+
         card.setTotalvotescrab(card.getTotalvotescrab() + 1);
         repository.saveAndFlush(card);
         return card;
