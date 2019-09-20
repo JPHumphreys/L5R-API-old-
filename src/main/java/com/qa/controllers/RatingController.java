@@ -55,6 +55,7 @@ public class RatingController {
 
         if(card.getTotalvotescrab() <=1){
             card.setRatingcrab(0);
+            card.setTotalvotescrab(0);
         }
         else if(card.getRatingcrab() - rating.getRatingcrab() <0){
             card.setRatingcrab(0);
