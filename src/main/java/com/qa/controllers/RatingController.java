@@ -28,6 +28,8 @@ public class RatingController {
     public Rating updateRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
         Rating card = repository.findOne(id);
 
+        System.out.println("beep boop");
+
         float tmpRating = rating.getRatingcrab();
         //card.setRatingcrab(rating.getRatingcrab());
 
