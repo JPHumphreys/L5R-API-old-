@@ -56,8 +56,12 @@ public class RatingController {
         if(card.getTotalvotescrab() == 0){
 
         }
+        else if(card.getRatingcrab() - rating.getRatingcrab() <0){
+            card.setRatingcrab(0);
+            card.setTotalvotescrab(card.getTotalvotescrab() - 1);
+        }
         else{
-            card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) - rating.getRatingcrab())/(card.getTotalvotescrab() + 1));
+            card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) - rating.getRatingcrab())/(card.getTotalvotescrab() - 1));
             card.setTotalvotescrab(card.getTotalvotescrab() - 1);
         }
 
