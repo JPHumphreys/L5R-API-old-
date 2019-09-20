@@ -27,10 +27,12 @@ public class RatingController {
     @RequestMapping(value = "ratings/crab/{id}",method = RequestMethod.PUT)
     public Rating updateRatingVSCrab(@PathVariable String id, @RequestBody Rating rating){
         Rating card = repository.findOne(id);
-        float tmpRating;
-        tmpRating = card.getRatingcrab();
-        //card.setRatingcrab(((card.getTotalvotescrab() * card.getRatingcrab()) +tmpRating)/card.getTotalvotescrab() + 1);
-        //card.setTotalvotescrab(card.getTotalvotescrab() + 1);
+
+        float tmpRating = rating.getRatingcrab();
+        //card.setRatingcrab(rating.getRatingcrab());
+
+        card.setRatingcrab(((rating.getTotalvotescrab() * rating.getRatingcrab()) +tmpRating)/rating.getTotalvotescrab() + 1);
+        card.setTotalvotescrab(card.getTotalvotescrab() + 1);
         repository.saveAndFlush(card);
         return card;
     }
