@@ -38,9 +38,9 @@ public class RatingController {
             System.out.println("beep boop");
         }
         else{
-            card.setRatingcrab(((rating.getTotalvotescrab() * card.getRatingcrab()) +tmpRating)/(rating.getTotalvotescrab() + 1));
-            System.out.println("total votes crab: " + rating.getTotalvotescrab());
-            System.out.println("card rating crab : " + card.getRatingcrab());
+            card.setRatingcrab(((card.getTotalvotescrab() * rating.getRatingcrab()) +tmpRating)/(card.getTotalvotescrab() + 1));
+            System.out.println("card votes crab: " + rating.getTotalvotescrab());
+            System.out.println("rating rating crab : " + card.getRatingcrab());
             System.out.println("tmp variable : " + tmpRating);
 
         }
