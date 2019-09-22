@@ -35,6 +35,7 @@ public class CardController {
     public List<Card> getCardByClan(@PathVariable String clan){
         return repository.findAllByClan(clan);
     }
+
     //get by clan and side to narrow down for rating votes
     @RequestMapping(value = "cards/{clan}/{side}", method = RequestMethod.GET)
     public List<Card> getCardByClanAndSide(@PathVariable String clan,@PathVariable String side){

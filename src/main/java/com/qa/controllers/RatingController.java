@@ -24,7 +24,7 @@ public class RatingController {
         return repository.findOne(id);
     }
 
-    @RequestMapping(value = "ratings/{clan}",method = RequestMethod.GET)
+    @RequestMapping(value = "ratings/clan/{clan}",method = RequestMethod.GET)
     public List<Rating> getRatingByClan(@PathVariable String clan){
         return repository.findAllByClan(clan);
     }
