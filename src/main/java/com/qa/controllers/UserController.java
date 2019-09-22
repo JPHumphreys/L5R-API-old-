@@ -38,4 +38,10 @@ public class UserController {
 
     }
 
+    @RequestMapping(value = "updateuser/{userid}",method = RequestMethod.POST)
+    public User updateUserById(@PathVariable String userid, @RequestBody User user){
+        User currentUser = repository.findOne(userid);
+        currentUser.setPassword(user.getPassword());
+    }
+
 }
