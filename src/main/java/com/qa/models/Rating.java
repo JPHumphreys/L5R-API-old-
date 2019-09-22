@@ -165,7 +165,4 @@ public class Rating {
     }
 
 
-    @ManyToMany
-    Set<Card> cardType;
-
 }

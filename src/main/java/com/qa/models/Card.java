@@ -14,7 +14,6 @@ public class Card {
     @Id
     String id;
 
-    @Column(name = "cardClan")
     String clan;
     int cost;
     int decklimit;
@@ -33,7 +32,6 @@ public class Card {
     String politicalbonus;
     String rolerestriction;
 
-    @Column(name = "cardSide")
     String side;
 
     int strength;
@@ -233,10 +231,6 @@ public class Card {
     public void setUnicity(String unicity) {
         this.unicity = unicity;
     }
-
-    @ManyToMany(mappedBy = "cardData")
-    Set<Rating> overall;
-
 
 }
 
