@@ -12,7 +12,6 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-
 public class UserController {
 
     @Autowired

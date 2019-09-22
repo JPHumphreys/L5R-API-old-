@@ -1,6 +1,7 @@
 package com.qa.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "ratings")
@@ -164,6 +165,7 @@ public class Rating {
     }
 
 
-
+    @ManyToMany
+    Set<Card> cardType;
 
 }

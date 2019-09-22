@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "cards")
@@ -13,6 +14,7 @@ public class Card {
     @Id
     String id;
 
+    @Column(name = "cardClan")
     String clan;
     int cost;
     int decklimit;
@@ -30,7 +32,10 @@ public class Card {
     int political;
     String politicalbonus;
     String rolerestriction;
+
+    @Column(name = "cardSide")
     String side;
+
     int strength;
     String strengthbonus;
     String text;
@@ -228,6 +233,9 @@ public class Card {
     public void setUnicity(String unicity) {
         this.unicity = unicity;
     }
+
+    @ManyToMany(mappedBy = "cardData")
+    Set<Rating> overall;
 
 
 }
