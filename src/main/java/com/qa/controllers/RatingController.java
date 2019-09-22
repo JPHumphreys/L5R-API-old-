@@ -24,6 +24,11 @@ public class RatingController {
         return repository.findOne(id);
     }
 
+    @RequestMapping(value = "ratings/{clan}",method = RequestMethod.GET)
+    public List<Rating> getRatingByClan(@PathVariable String clan){
+        return repository.findAllByClan(clan);
+    }
+
     @RequestMapping(value = "add/ratings/{clan}/{id}",method = RequestMethod.PUT)
     public Rating addRatingVSCrab(@PathVariable String clan, @PathVariable String id,@RequestBody Rating rating){
         Rating card = repository.findOne(id);

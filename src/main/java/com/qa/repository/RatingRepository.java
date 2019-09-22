@@ -9,6 +9,6 @@ public interface RatingRepository extends JpaRepository<Rating, String>{
 
     //List<Rating> findOneByClanAndSide(String clan, String side);
 
-    //List<Card> findAllByClanAndSide(String clan, String side);
+    List<Rating> findAllByClan(String clan);
 
 }
