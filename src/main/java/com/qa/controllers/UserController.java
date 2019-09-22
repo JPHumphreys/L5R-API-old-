@@ -19,9 +19,22 @@ public class UserController {
     @ElementCollection(fetch = FetchType.LAZY)
     private UserRepository repository;
 
-    @RequestMapping(value = "ratings/{userid}", method = RequestMethod.GET)
-    public User getUserId(@PathVariable String userid){
+    @RequestMapping(value = "getuser/{userid}", method = RequestMethod.GET)
+    public User getUserById(@PathVariable String userid){
         return repository.findOne(userid);
+    }
+
+    @RequestMapping(value = "deleteuser/{userid}", method = RequestMethod.DELETE)
+    public User deleteUserById(@PathVariable String userid){
+        User user = repository.findOne(userid);
+        repository.delete(user);
+        return user;
+    }
+
+    @RequestMapping(value = "adduser/", method = RequestMethod.POST)
+    public User addUserById(@RequestBody User user){
+        return repository.saveAndFlush(user);
+
     }
 
 }
