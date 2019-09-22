@@ -42,6 +42,8 @@ public class UserController {
     public User updateUserById(@PathVariable String userid, @RequestBody User user){
         User currentUser = repository.findOne(userid);
         currentUser.setPassword(user.getPassword());
+        repository.saveAndFlush(currentUser);
+        return currentUser;
     }
 
 }
