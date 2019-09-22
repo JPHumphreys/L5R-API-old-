@@ -2,7 +2,6 @@ package com.qa.repository;
 
 import com.qa.models.Rating;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.qa.models.Card;
 import java.util.List;
 
 public interface RatingRepository extends JpaRepository<Rating, String>{
