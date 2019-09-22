@@ -34,7 +34,6 @@ public class UserController {
 
     @RequestMapping(value = "adduser/", method = RequestMethod.POST)
     public User addUserById(@RequestBody User user){
-        user.setPassword();
         return repository.saveAndFlush(user);
 
     }
