@@ -12,33 +12,33 @@ import java.util.Set;
 public class Card {
 
     @Id
-    String id;
+    private String id;
 
-    String clan;
-    int cost;
-    int decklimit;
-    String element;
-    int fate;
-    int glory;
-    int honor;
-    String imglocation;
-    int influencecost;
-    int influencepool;
-    String isrestricted;
-    int military;
-    String militarybonus;
-    String name;
-    int political;
-    String politicalbonus;
-    String rolerestriction;
+    private String clan;
+    private int cost;
+    private int decklimit;
+    private String element;
+    private int fate;
+    private int glory;
+    private int honor;
+    private String imglocation;
+    private int influencecost;
+    private int influencepool;
+    private String isrestricted;
+    private int military;
+    private String militarybonus;
+    private String name;
+    private int political;
+    private String politicalbonus;
+    private String rolerestriction;
 
-    String side;
+    private String side;
 
-    int strength;
-    String strengthbonus;
-    String text;
-    String typeof;
-    String unicity;
+    private int strength;
+    private String strengthbonus;
+    private String text;
+    private String typeof;
+    private String unicity;
 
     public String getClan() {
         return clan;

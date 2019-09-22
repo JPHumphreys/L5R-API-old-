@@ -5,7 +5,6 @@ import com.qa.repository.RatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.qa.models.Rating;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.FetchType;

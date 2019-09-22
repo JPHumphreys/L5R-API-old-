@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Deck {
 
     @Id
-    String userid;
+    private String userid;
 
 
 }

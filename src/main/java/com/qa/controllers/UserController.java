@@ -8,7 +8,6 @@ import com.qa.models.User;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.FetchType;
-import java.util.List;
 
 @CrossOrigin
 @RestController

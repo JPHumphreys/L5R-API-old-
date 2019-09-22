@@ -1,32 +1,31 @@
 package com.qa.models;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "ratings")
 public class Rating {
 
     @Id
-    String id;
-    String clan;
+    private String id;
+    private String clan;
 
-    float overallrating;
-    float ratingcrab;
-    float ratingcrane;
-    float ratingdragon;
-    float ratinglion;
-    float ratingphoenix;
-    float ratingscorpion;
-    float ratingunicorn;
+    private float overallrating;
+    private float ratingcrab;
+    private float ratingcrane;
+    private float ratingdragon;
+    private float ratinglion;
+    private float ratingphoenix;
+    private float ratingscorpion;
+    private float ratingunicorn;
 
-    int totalvotescrab;
-    int totalvotescrane;
-    int totalvotesdragon;
-    int totalvoteslion;
-    int totalvotesphoenix;
-    int totalvotesscorpion;
-    int totalvotesunicorn;
+    private int totalvotescrab;
+    private int totalvotescrane;
+    private int totalvotesdragon;
+    private int totalvoteslion;
+    private int totalvotesphoenix;
+    private int totalvotesscorpion;
+    private int totalvotesunicorn;
 
     public String getId() {
         return id;

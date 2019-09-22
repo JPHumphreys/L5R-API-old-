@@ -7,9 +7,9 @@ import javax.persistence.*;
 public class User {
 
     @Id
-    String userid;
+    private String userid;
 
-    String password;
+    private String password;
 
     public String getUserid() {
         return userid;
