@@ -33,7 +33,6 @@ public class UserController {
     @RequestMapping(value = "add/user/", method = RequestMethod.POST)
     public User addUserById(@RequestBody User user){
         return repository.saveAndFlush(user);
-
     }
 
     @RequestMapping(value = "update/user/{userid}",method = RequestMethod.PUT)

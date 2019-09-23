@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "decks")
 public class Deck {
 
-    @Id
     private String userid;
 
     private String deckname;

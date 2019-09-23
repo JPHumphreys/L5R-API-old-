@@ -33,7 +33,6 @@ public class DeckController {
             cards.get(i).setDeckname(newDeckname);
             repository.saveAndFlush(cards.get(i));
         }
-
         return cards;
     }
 
@@ -49,8 +48,5 @@ public class DeckController {
     public Deck createDeck(@RequestBody Deck deck){
           return repository.saveAndFlush(deck);
     }
-
-
-
 
 }
