@@ -6,6 +6,10 @@ import javax.persistence.*;
 @Table(name = "decks")
 public class Deck {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String userid;
 
     private String deckname;
