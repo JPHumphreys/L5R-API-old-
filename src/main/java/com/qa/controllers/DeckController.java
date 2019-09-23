@@ -45,8 +45,8 @@ public class DeckController {
         return cards;
     }
 
-    @RequestMapping(value = "post/deck/{userid}",method = RequestMethod.POST)
-    public List<Deck> createDeckByUserid(@PathVariable String userid, @RequestBody List<Deck> deck){
+    @RequestMapping(value = "post/deck/",method = RequestMethod.POST)
+    public List<Deck> createDeckByUserid(@RequestBody List<Deck> deck){
 
         for(int i = 0; i < deck.size(); i++){
             repository.saveAndFlush(deck.get(i));
