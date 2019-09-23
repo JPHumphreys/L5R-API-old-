@@ -46,8 +46,7 @@ public class DeckController {
     }
 
     @RequestMapping(value = "post/deck/",method = RequestMethod.POST)
-    public Deck createDeckByUserid(@RequestBody Deck deck){
-
+    public Deck createDeck(@RequestBody Deck deck){
           return repository.saveAndFlush(deck);
     }
 

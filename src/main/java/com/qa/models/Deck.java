@@ -13,7 +13,7 @@ public class Deck {
 
     private String cardid;
 
-    private int quanitity;
+    private int quantity;
 
     public String getUserid() {
         return userid;
@@ -40,11 +40,11 @@ public class Deck {
     }
 
     public int getQuanitity() {
-        return quanitity;
+        return quantity;
     }
 
     public void setQuanitity(int quanitity) {
-        this.quanitity = quanitity;
+        this.quantity = quanitity;
     }
 
 }
