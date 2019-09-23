@@ -39,11 +39,11 @@ public class Deck {
         this.cardid = cardid;
     }
 
-    public int getQuanitity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuanitity(int quanitity) {
+    public void setQuantity(int quanitity) {
         this.quantity = quanitity;
     }
 
