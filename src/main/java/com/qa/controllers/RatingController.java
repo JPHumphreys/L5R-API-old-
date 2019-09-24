@@ -207,19 +207,34 @@ public class RatingController {
             obj.getTotalvotesscorpion() +
             obj.getTotalvotesunicorn();
 
-    float totalRatings = obj.getRatingcrab() +
-            obj.getRatingcrane() +
-            obj.getRatingdragon() +
-            obj.getRatinglion() +
-            obj.getRatingphoenix() +
-            obj.getRatingscorpion() +
-            obj.getRatingunicorn();
+            float finaltotal = 0;
+            if(obj.getTotalvotescrab() != 0) {
+                finaltotal += (obj.getRatingcrab() * obj.getTotalvotescrab());
+            }
+            if(obj.getTotalvotescrane() != 0){
+                finaltotal += (obj.getRatingcrane() * obj.getTotalvotescrane());
+            }
+            if(obj.getTotalvotesdragon() != 0){
+                finaltotal += (obj.getRatingdragon() * obj.getTotalvotesdragon());
+            }
+            if(obj.getTotalvoteslion() != 0){
+                finaltotal += (obj.getRatinglion() * obj.getTotalvoteslion());
+            }
+            if(obj.getTotalvotesphoenix() != 0){
+                finaltotal += (obj.getRatingphoenix() * obj.getTotalvotesphoenix());
+            }
+            if(obj.getTotalvotesscorpion() != 0){
+                finaltotal += (obj.getRatingscorpion() * obj.getTotalvotesscorpion());
+            }
+            if(obj.getTotalvotesunicorn() != 0){
+                finaltotal += (obj.getRatingunicorn() * obj.getTotalvotesunicorn());
+            }
 
     if(totalVotes <= 0){
         toReturn = 0;
     }
     else{
-        toReturn = totalRatings / totalVotes;
+        toReturn = finaltotal / totalVotes;
     }
 
     return (toReturn);
