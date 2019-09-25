@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
@@ -36,4 +37,41 @@ public class CardControllerTest {
     private TestRestTemplate restTemplate;
 
 
+    @Test
+    public void testGetCardByClanAndSide() {  //every test should be public void
+        List<Card> cards = new ArrayList<>();
+
+            Card card = new Card();
+
+            card.setId("temp-char-");
+            card.setClan("crab");
+            card.setCost(2);
+            card.setDecklimit(3);
+            card.setElement("fire");
+            card.setFate(2);
+            card.setGlory(2);
+            card.setHonor(0);
+            card.setImglocation("https");
+            card.setInfluencepool(1);
+            card.setInfluencecost(1);
+            card.setIsrestricted("false");
+            card.setMilitary(3);
+            card.setMilitarybonus("+1");
+            card.setName("temp char");
+            card.setPolitical(2);
+            card.setPoliticalbonus("+0");
+            card.setRolerestriction("false");
+            card.setSide("conflict");
+            card.setStrength(1);
+            card.setStrengthbonus("+0");
+            card.setText("temp text");
+            card.setTypeof("test");
+            card.setUnicity("false");
+            cards.add(card);
+
+        when(repository.findAllByClanAndSide("crab","conflict")).thenReturn(cards);
+
+        assertEquals(cardController.getCardByClanAndSide("crab","conflict").get(0).getSide(), "conflict");
+
+    }
 }
