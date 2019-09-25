@@ -16,7 +16,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -30,16 +29,10 @@ public class CardControllerTest {
     @Mock
     private CardRepository repository;
 
-    @LocalServerPort
-    private int port;
-
-    @Autowired
-    private TestRestTemplate restTemplate;
-
-
     @Test
     public void testGetCardByClanAndSide() {  //every test should be public void
-        List<Card> cards = new ArrayList<>();
+
+            List<Card> cards = new ArrayList<>();
 
             Card card = new Card();
 
@@ -67,11 +60,12 @@ public class CardControllerTest {
             card.setText("temp text");
             card.setTypeof("test");
             card.setUnicity("false");
+
             cards.add(card);
 
-        when(repository.findAllByClanAndSide("crab","conflict")).thenReturn(cards);
+            when(repository.findAllByClanAndSide("crab","conflict")).thenReturn(cards);
 
-        assertEquals(cardController.getCardByClanAndSide("crab","conflict").get(0).getSide(), "conflict");
+            assertEquals(cardController.getCardByClanAndSide("crab","conflict").get(0).getSide(), "conflict");
 
     }
 }
