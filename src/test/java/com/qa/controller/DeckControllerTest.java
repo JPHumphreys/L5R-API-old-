@@ -77,6 +77,15 @@ public class DeckControllerTest {
         assertEquals(deckController.getDeckByUsernameAndDeckname("test","deckname").get(0).getQuantity(), 3);
     }
 
+    @Test
+    public void testDeckDeleteRequest(){
+        List<Deck> deckList = new ArrayList<>();
+        Deck deckConstructor = new Deck("test", "deckname", "hida-kisada", 3);
+        deckList.add(deckConstructor);
 
+        when(repository.findAllByUseridAndDeckname("test","deckname")).thenReturn(deckList);
+        repository.delete(deckList);
+        assertEquals(deckController.deleteDeckByUsernameAndDeckname("test","deckname").get(0).getQuantity(),3);
+    }
 
 }
