@@ -18,6 +18,16 @@ public class Deck {
 
     private int quantity;
 
+    public Deck(){}
+
+
+    public Deck(String userid, String deckname, String cardid, int quantity){
+        this.userid = userid;
+        this.deckname = deckname;
+        this.cardid = cardid;
+        this.quantity = quantity;
+    }
+
     public String getUserid() {
         return userid;
     }
