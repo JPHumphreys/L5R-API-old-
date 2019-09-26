@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "ratings")
-public class Rating {
+public class Rating extends CardId{
 
     @Id
     private String id;

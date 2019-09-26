@@ -9,7 +9,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "cards")
-public class Card {
+public class Card extends CardId{
 
     @Id
     private String id;
