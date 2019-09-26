@@ -70,6 +70,10 @@ public class UserControllerTest {
 
     @Test
     public void testDeleteUserRequest(){
+        User user = new User("test","pass");
+
+        when(repository.findOne("test")).thenReturn(user);
+        assertEquals(userController.deleteUserById("test").getPassword(),"pass");
 
     }
 
