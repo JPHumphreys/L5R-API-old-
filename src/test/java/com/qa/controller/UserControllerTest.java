@@ -61,6 +61,10 @@ public class UserControllerTest {
 
     @Test
     public void testPutUserRequest(){
+        User user = new User("test", "pass");
+
+        when(repository.findOne("test")).thenReturn(user);
+        assertEquals(userController.updateUserById("test", user).getPassword(),"pass");
 
     }
 
