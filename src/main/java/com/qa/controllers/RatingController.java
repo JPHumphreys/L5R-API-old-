@@ -29,7 +29,7 @@ public class RatingController {
     }
 
     @RequestMapping(value = "add/ratings/{clan}/{id}",method = RequestMethod.PUT)
-    public Rating addRatingVSCrab(@PathVariable String clan, @PathVariable String id,@RequestBody Rating rating){
+    public Rating addRatingVSClan(@PathVariable String clan, @PathVariable String id,@RequestBody Rating rating){
         Rating card = repository.findOne(id);
 
         switch (clan){
