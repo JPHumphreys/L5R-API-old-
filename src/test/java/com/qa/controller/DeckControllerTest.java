@@ -63,8 +63,8 @@ public class DeckControllerTest {
         Deck deckConstructor = new Deck("test", "deckname", "hida-kisada", 3);
 
         when(repository.saveAndFlush(deckConstructor)).thenReturn(deckConstructor);
-        assertEquals(deckConstructor.getDeckname(),"deckname");
-        assertEquals(deckConstructor.getQuantity(),3);
+        assertEquals(deckController.createDeck(deckConstructor).getDeckname(),"deckname");
+        assertEquals(deckController.createDeck(deckConstructor).getQuantity(),3);
     }
 
     @Test

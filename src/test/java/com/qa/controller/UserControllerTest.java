@@ -27,7 +27,7 @@ public class UserControllerTest {
     private UserRepository repository;
 
     @Test
-    public void getUserRequest(){
+    public void testGetUserRequest(){
         User user = new User();
 
         user.setUserid("empty");
@@ -40,12 +40,32 @@ public class UserControllerTest {
     }
 
     @Test
-    public void getUserConstructorRequest(){
+    public void testGetUserConstructorRequest(){
         User userConstructor = new User("const", "password");
 
         when(repository.findOne("const")).thenReturn(userConstructor);
         assertEquals(userConstructor.getUserid(),"const");
         assertEquals(userConstructor.getPassword(),"password");
+
+    }
+
+    @Test
+    public void testPostUserRequest(){
+
+        User user = new User("wer","pass");
+
+        when(repository.saveAndFlush(user)).thenReturn(user);
+        assertEquals(userController.addUserById(user).getPassword(),"pass");
+
+    }
+
+    @Test
+    public void testPutUserRequest(){
+
+    }
+
+    @Test
+    public void testDeleteUserRequest(){
 
     }
 
