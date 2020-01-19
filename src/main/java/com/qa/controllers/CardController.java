@@ -31,7 +31,7 @@ public class CardController {
     }
 
     //get by just clan
-    @RequestMapping(value = "cards/{clan}", method = RequestMethod.GET)
+    @RequestMapping(value = "cards/clan/{clan}", method = RequestMethod.GET)
     public List<Card> getCardByClan(@PathVariable String clan){
         return repository.findAllByClan(clan);
     }
