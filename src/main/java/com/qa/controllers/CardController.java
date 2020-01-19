@@ -49,6 +49,8 @@ public class CardController {
         return  repository.findAllByClanAndSideAndTypeof(clan,side,typeof);
     }
 
+    //TESTING HEROKU CLI
+
     /*
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
