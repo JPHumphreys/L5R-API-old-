@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "cards")
+//@Table(name = "cards")
 public class Card extends CardId{
 
     @Id

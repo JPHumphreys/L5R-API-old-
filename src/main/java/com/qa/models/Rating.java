@@ -3,7 +3,7 @@ package com.qa.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ratings")
+//@Table(name = "ratings")
 public class Rating extends CardId{
 
     @Id
