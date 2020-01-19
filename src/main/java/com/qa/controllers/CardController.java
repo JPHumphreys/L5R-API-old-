@@ -31,7 +31,7 @@ public class CardController {
     }
 
     //get by just clan
-    @RequestMapping(value = "cards/clans/{clan}", method = RequestMethod.GET)
+    @RequestMapping(value = "cards/{clan}", method = RequestMethod.GET)
     public List<Card> getCardByClan(@PathVariable String clan){
         return repository.findAllByClan(clan);
     }
@@ -41,6 +41,15 @@ public class CardController {
     public List<Card> getCardByClanAndSide(@PathVariable String clan,@PathVariable String side){
         return repository.findAllByClanAndSide(clan,side);
     }
+
+    //used for the new way of displaying the cards
+    @RequestMapping(value = "cards/{clan}/{side}/{typeof}", method = RequestMethod.GET)
+    public List<Card> getCardByClanAndSideAndTypeof(@PathVariable String clan, @PathVariable String side,
+                                                    @PathVariable String typeof){
+        return  repository.findAllByClanAndSideAndTypeof(clan,side,typeof);
+    }
+
+    /*
 
     @RequestMapping(value = "cards/{id}", method = RequestMethod.DELETE)
     public Card deleteCard(@PathVariable String id){
@@ -55,6 +64,6 @@ public class CardController {
         return repository.saveAndFlush(existing);
     }
 
-
+    */
 
 }
