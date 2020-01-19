@@ -45,15 +45,11 @@ public class CardController {
     }
 
     //used for the new way of displaying the cards
-
-    /*
     @RequestMapping(value = "cards/{clan}/{side}/{typeof}", method = RequestMethod.GET)
     public List<Card> getCardByClanAndSideAndTypeof(@PathVariable String clan, @PathVariable String side,
                                                     @PathVariable String typeof){
         return  repository.findAllByClanAndSideAndTypeof(clan,side,typeof);
     }
-
-     */
 
     //TESTING HEROKU CLI
 

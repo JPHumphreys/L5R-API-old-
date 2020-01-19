@@ -10,6 +10,6 @@ public interface CardRepository extends JpaRepository<Card, String>{
 
     List<Card> findAllByClanAndSide(String clan, String side);
 
-    //List<Card> findAllByClanAndSideAndTypeof(String clan, String side, String typeof);
+    List<Card> findAllByClanAndSideAndTypeof(String clan, String side, String typeof);
 
 }
