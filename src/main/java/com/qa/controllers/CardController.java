@@ -2,7 +2,9 @@ package com.qa.controllers;
 
 
 import com.qa.repository.CardRepository;
+import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.converter.json.GsonBuilderUtils;
 import org.springframework.web.bind.annotation.*;
 import com.qa.models.Card;
 
@@ -17,6 +19,11 @@ public class CardController {
     @Autowired
     @ElementCollection(fetch= FetchType.LAZY)
     private CardRepository repository;
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+        String hello(){
+        return "Hello Heroku";
+    }
 
     //get all cards
     @RequestMapping(value = "cards", method = RequestMethod.GET)
