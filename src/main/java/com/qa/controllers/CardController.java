@@ -20,7 +20,7 @@ public class CardController {
     @ElementCollection(fetch= FetchType.LAZY)
     private CardRepository repository;
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping("/")
         String hello(){
         return "Hello Heroku";
     }
