@@ -35,6 +35,11 @@
     </dependency>
 
     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-jdbc</artifactId>
+    </dependency>
+
+    <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <scope>runtime</scope>
@@ -62,7 +67,6 @@
       <version>1.10.19</version>
       <scope>test</scope>
     </dependency>
-
 
     <dependency>
       <groupId>javax.xml.bind</groupId>
